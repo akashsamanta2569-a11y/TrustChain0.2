@@ -1,0 +1,1 @@
+"# ??? TrustChain: Blockchain Certificate VerifierBuilt for **Xibit 2026** @ Brainware University.### ?? Core Features* **Blockchain Ledger:** Every certificate is cryptographically linked to the previous one using SHA-256.* **Instant Verification:** Scannable QR codes for employers.* **Tamper-Proof:** Any change in history breaks the hash chain." 
