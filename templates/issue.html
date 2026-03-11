@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Certificate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Log Out</a>
+        <a href="/issue" style="color: white;">Issue Certificate</a>
+        <a href="/verify">Verify</a>
+        <a href="/dashboard">Dashboard</a>
+    </nav>
+    <div class="card">
+        <h2>Issue New Certificate</h2>
+        <form method="POST" action="/issue">
+            <div style="text-align: left;">
+                <label style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px; display: block;">Student Name</label>
+                <input type="text" name="student" placeholder="e.g. Jane Doe" required>
+                
+                <label style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px; display: block;">Course Name</label>
+                <input type="text" name="course" placeholder="e.g. Advanced Python" required>
+                
+                <label style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px; display: block;">Institution</label>
+                <input type="text" name="issuer" placeholder="e.g. Brainware University" required>
+            </div>
+            <button type="submit" class="btn">Generate Certificate</button>
+        </form>
+    </div>
+</body>
+</html>

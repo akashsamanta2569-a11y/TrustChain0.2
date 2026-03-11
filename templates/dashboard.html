@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Log Out</a>
+        <a href="/issue">Issue Certificate</a>
+        <a href="/verify">Verify</a>
+        <a href="/dashboard" style="color: white;">Dashboard</a>
+    </nav>
+
+    <div class="table-container">
+        <h2>Issued Certificates Ledger</h2>
+       <table>
+    <tr>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Hash</th>
+        <th>Previous Hash</th>
+    </tr>
+    {% for c in certificates %}
+    <tr>
+        <td style="color: white; font-weight: 500;">{{ c[1] }}</td>
+        <td style="color: var(--text-muted);">{{ c[2] }}</td>
+        <td style="font-family: monospace; color: var(--primary-green); font-size: 12px;">{{ c[4][:12] }}...</td>
+        <td style="font-family: monospace; color: var(--text-muted); font-size: 12px;">
+            {% if c[5] == 'GENESIS_BLOCK' %}
+                <span style="color: #fbbf24;">GENESIS_BLOCK</span>
+            {% else %}
+                {{ c[5][:12] }}...
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+    </div>
+</body>
+</html>
